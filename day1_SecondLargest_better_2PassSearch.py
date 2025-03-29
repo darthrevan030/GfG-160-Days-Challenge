@@ -40,4 +40,5 @@ class Solution:
 
 if __name__ == "__main__":
     arr = [12, 35, 1, 10, 34, 1]
-    print(Solution.getSecondLargest(arr))
+    solution = Solution()
+    print(solution.getSecondLargest(arr))
