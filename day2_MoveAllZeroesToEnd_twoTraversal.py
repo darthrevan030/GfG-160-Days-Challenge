@@ -4,6 +4,18 @@ Your task is to move all the zeros in the array to the right end while maintaini
 The operation must be performed in place, meaning you should not use extra space for another array.
 '''
 
+'''
+First Traversal: Shift non-zero elements
+Traverse the array and maintain the count of non-zero elements. This count is initialized with 0 and keeps track 
+of where the next non-zero element should be placed in the array. If the element is non-zero, place it at arr[count] 
+and increment count by 1. After traversing all the elements, all non-zero elements will be shifted 
+to the front while maintaining their original order.
+
+Second Traversal: Fill remaining positions with zeros
+After the first traversal, all non-zero elements will be at the start of the array and count will store the index 
+where the first zero should be placed. Iterate from count to the end of array and fill all indices with 0.
+'''
+
 class Solution:
 	def pushZerosToEnd(self,arr):
 		# code here
