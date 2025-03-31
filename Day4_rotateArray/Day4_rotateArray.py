@@ -3,3 +3,5 @@ Given an array arr[]. Rotate the array to the left (counter-clockwise direction)
 Do the mentioned change in the array in place.
 Note: Consider the array as circular.
 '''
+
+def rotateArr(self, arr, d):
