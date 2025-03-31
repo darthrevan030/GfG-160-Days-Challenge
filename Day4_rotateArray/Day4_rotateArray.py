@@ -5,3 +5,7 @@ Note: Consider the array as circular.
 '''
 
 def rotateArr(self, arr, d):
+if __name__ == "__main__":
+    arr = [1, 2, 3, 4, 5]
+    rotateArr(arr, 2)
+    print(arr)
