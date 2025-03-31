@@ -20,3 +20,8 @@ if __name__ == "__main__":
     d = 2
     rotateArr(ar, d)
     print(ar)
+
+    ar = [7, 3, 9, 1]
+    d = 9
+    rotateArr(ar, d)
+    print(ar)
