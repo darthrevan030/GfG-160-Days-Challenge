@@ -4,6 +4,11 @@ Do the mentioned change in the array in place.
 Note: Consider the array as circular.
 '''
 
+'''
+Time complexity: O(n)
+Space complexity: O(n)
+'''
+
 def rotateArr(arr, d):
     n = len(arr)
     d = d % n  # Handle case where d > n
