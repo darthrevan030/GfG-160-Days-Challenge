@@ -33,7 +33,7 @@ def rotateArr(arr, d):
 
     d %= n # handle the case for when d > n
 
-    cycles = math.gcd(n, d) # calculate number of cycles
+    cycles = math.gcd(n, d) # calculate number of cycles by finding the greatest common divisor
 
     for i in range(cycles):
         startElement = arr[i] # start element of current cycle
