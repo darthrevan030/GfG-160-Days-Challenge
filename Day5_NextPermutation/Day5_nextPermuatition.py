@@ -20,38 +20,41 @@ Implementation:
     - Minimize the suffix part by reversing the array from pivot + 1 till n
 '''
 
+class Solution:
+    def nextPermutation(self, arr):
+        n = len(arr)
+        pivot = -1
 
-def nextPermutation(self, arr):
-    n = len(arr)
-    pivot = -1
+        # find the pivot
+        for i in range(n - 2, -1, -1):
+            if arr[i + 1] > arr[i]:
+                pivot = i
+                break
 
-    # find the pivot
-    for i in range(n - 2, -1, -1):
-        if arr[i + 1] > arr[i]:
-            pivot = i
-            break
+        # if pivot doesn't exist, reverse the array
+        if pivot == -1:
+            arr.reverse()
+            return
+        
+        # find the successor and swap the successor and pivot
+        for j in range(n - 1, pivot, -1):
+            if arr[j] > arr[pivot]:
+                arr[i], arr[pivot] = arr[pivot], arr[i]
+                break
+        
+        # reverse the elements to the right of the pivot
+        left = pivot + 1
+        right = n - 1
 
-    # if pivot doesn't exist, reverse the array
-    if pivot == -1:
-        arr.reverse()
-        return
-    
-    # find the successor and swap the successor and pivot
-    for j in range(n - 1, pivot, -1):
-        if arr[j] > arr[pivot]:
-            arr[i], arr[pivot] = arr[pivot], arr[i]
-            break
-    
-    # reverse the elements to the right of the pivot
-    left = pivot + 1
-    right = n - 1
+        while left < right:
+            arr[left], arr[right] = arr[right], arr[left]
+            left += 1
+            right -+ 1
 
-    while left > right:
-        arr[left], arr[right] = arr[right], arr[left]
-        left += 1
-        right -+ 1
+        return arr
 
 if __name__ == "__main__":
     arr = [2, 4, 1, 7, 5, 0]
-    nextPermutation(arr)
-    print(" ".join(map(str, arr)))
+    solution = Solution()
+    result = solution.nextPermutation(arr)
+    print(result)
