@@ -13,3 +13,5 @@ class Solution:
     def maximumProfit(self, prices) -> int:
         # code here
 
+if __name__ == "__main__":
+    arr = [100, 180, 260, 310, 40, 535, 695]
