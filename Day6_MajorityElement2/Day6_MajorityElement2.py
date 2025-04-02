@@ -10,12 +10,19 @@ class Solution:
     def findMajority(self, arr):
         n = len(arr)
 
-        count = {item:arr.count(item) for item in arr}
+        count = {}
         result = []
+
+        for element in arr:
+            count[element] = count.get(element, 0) + 1
         
-        for key, value in count.items():
-            if value > n // 3:
-                result.append(key)
+        
+        for element, freq in count.items():
+            if freq > n // 3:
+                result.append(element)
+        
+        if len(result) == 2 and result[0] > result[1]:
+            result[0], result[1] = result[1], result[0]
         
         return result
 
