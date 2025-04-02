@@ -1,3 +1,28 @@
+/*
+You are given an array of integer arr[] where each number represents a vote to a candidate. 
+Return the candidates that have votes greater than one-third of the total votes, If there's 
+not a majority vote, return an empty array. 
+
+Note: The answer should be returned in an increasing format.
+
+The idea is based on the observation that there can be at most two majority elements, which appear more 
+than n/3 times. so we can use Boyer-Moore’s Voting algorithm. As we iterate the array, We identify 
+potential majority elements by keeping track of two candidates and their respective counts.
+
+Steps:
+    - Initialize two variables ele1 = -1 and ele2 = -1, for candidates and two variables cnt1 = 0 and cnt2 = 0, for counting.
+    - In each iteration,
+        - If an element is equal to any candidate, update that candidate's count.
+        - If count of a candidate reaches zero then replace that candidate with current element.
+        - If neither candidate matches and both counts are non zero, decrement the counts.
+    - After this, in second pass we check if the chosen candidates appear more than n/3 times in the array. 
+    - If they do then include them in result array.
+    - Since any element than appears more than floor(n/3) times, will dominate over elements that appear less frequently.
+    - Whenever we encounter a different element, we decrement the count of both the candidates. This maintains at most 
+    two candidates in the array.
+
+*/
+
 // C++ program for finding the majority element in an array
 // using Moore’s Voting algorithm
 
