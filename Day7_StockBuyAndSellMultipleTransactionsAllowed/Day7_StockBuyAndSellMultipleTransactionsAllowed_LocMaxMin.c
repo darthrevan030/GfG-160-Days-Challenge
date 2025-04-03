@@ -11,10 +11,23 @@ Note: A stock can only be sold if it has been bought previously and multiple sto
 int maximumProfit(const int *prices, int n){
     int profit = 0;
 
-    for (int i = 1; i < n; i++){
-        if (prices[i] > prices[i - 1]){
-            profit += (prices[i] - prices[i - 1]);
+    int locMin = 0;
+    int locMax = 0;
+
+    int i = 0;
+
+    while (1 < n - 1){
+        while (i < n - 1 && prices[i] >= prices[i +1]){
+            i++;
         }
+        locMin = prices[i];
+
+        while(i < n - 1 && prices[i] <= prices[i + 1]){
+            i++;
+        }
+        locMax = prices[i];
+        
+        profit += (locMax - locMin);
     }
     return profit;
 }
