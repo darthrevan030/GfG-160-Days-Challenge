@@ -12,6 +12,22 @@ from typing import List
 class Solution:
     def maximumProfit(self, prices) -> int:
         # code here
+        n = len(arr)
+        
+        profit = 0
+        locMax = prices[0]
+        locMin = prices[0]
+
+        for i in range(n-1):
+            if prices[i + 1] < prices[i]:
+                locMax = prices[i]
+            if locMin > prices[i]:
+                locMin = prices[i]
+            
+            profit += (locMax - locMin)
+        
+        return profit
+
 
 if __name__ == "__main__":
     arr = [100, 180, 260, 310, 40, 535, 695]
