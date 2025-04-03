@@ -18,12 +18,16 @@ class Solution:
         locMax = prices[0]
         locMin = prices[0]
 
-        for i in range(n-1):
-            if prices[i + 1] < prices[i]:
-                locMax = prices[i]
-            if locMin > prices[i]:
-                locMin = prices[i]
-            
+        i = 0
+
+        while i < n - 1:
+            while i < n - 1 and prices[i] >= prices[i + 1]:
+                i += 1
+            locMin = prices[i]
+            while i < n - 1 and prices[i] <= prices[i + 1]:
+                i += 1
+            locMax = prices[i]
+
             profit += (locMax - locMin)
         
         return profit
