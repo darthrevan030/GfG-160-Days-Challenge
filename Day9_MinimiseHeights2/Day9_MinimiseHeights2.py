@@ -15,3 +15,7 @@ the resultant array should not contain any negative integers.
 '''
 
 def getMinDiff(arr, k):
+
+if __name__ == "__main__":
+    arr = [1, 5, 8, 10]
+    print(getMinDiff(arr, 2))
