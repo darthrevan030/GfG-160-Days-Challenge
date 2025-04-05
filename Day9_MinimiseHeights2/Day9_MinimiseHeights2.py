@@ -19,3 +19,6 @@ def getMinDiff(arr, k):
 if __name__ == "__main__":
     arr = [1, 5, 8, 10]
     print(getMinDiff(arr, 2))
+
+    arr2 = [3, 9, 12, 16, 20]
+    print(getMinDiff(arr2, 3))
