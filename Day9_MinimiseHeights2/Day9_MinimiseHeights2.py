@@ -13,3 +13,5 @@ You can find a slight modification of the problem here: https://practice.geeksfo
 Note: It is compulsory to increase or decrease the height by K for each tower. After the operation, 
 the resultant array should not contain any negative integers.
 '''
+
+def getMinDiff(arr, k):
