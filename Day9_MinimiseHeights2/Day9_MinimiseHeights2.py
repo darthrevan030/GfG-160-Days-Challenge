@@ -15,6 +15,27 @@ the resultant array should not contain any negative integers.
 '''
 
 def getMinDiff(arr, k):
+    n = len(arr)
+
+    tallest = arr[0]
+    shortest = arr[0]
+
+    diff = 0
+
+    i = 0
+
+    while i < n - 1:
+        
+        while i < n - 1 and arr[i] >= arr[i + 1]:
+                i += 1
+        shortest = arr[i] + k 
+        while i < n - 1 and arr[i] <= arr[i + 1]:
+                i += 1
+        tallest = arr[i] - k
+    
+    diff = tallest - shortest
+
+    return diff
 
 if __name__ == "__main__":
     arr = [1, 5, 8, 10]
