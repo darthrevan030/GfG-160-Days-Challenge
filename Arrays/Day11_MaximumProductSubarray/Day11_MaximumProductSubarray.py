@@ -13,20 +13,22 @@ def maxProduct(arr):
     maxProd = arr[0]
 
     for i in range(1, n):
-        curMax = max(curMax * arr[i], arr[i], curMin * arr[i])
+        temp = max(curMax * arr[i], arr[i], curMin * arr[i])
 
         curMin = min(curMax * arr[i], arr[i], curMin * arr[i])
 
-        maxProd = max(curMax, curMin)
+        curMax = temp
+
+        maxProd = max(curMax, maxProd)
 
     return maxProd
 
 if __name__ == "__main__":
-    arr = [-2, 6, -3, -10, 0, 2]
+    arr = [-2, 6, -3, -10, 0, 2] # 180
     print(maxProduct(arr))
 
-    arr2 = [-1, -3, -10, 0, 6]
+    arr2 = [-1, -3, -10, 0, 6] # 30
     print(maxProduct(arr2))
 
-    arr3 = [2, 3, 4] 
+    arr3 = [2, 3, 4] # 24
     print(maxProduct(arr3))
