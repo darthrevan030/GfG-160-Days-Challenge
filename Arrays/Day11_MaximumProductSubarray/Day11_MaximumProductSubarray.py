@@ -8,15 +8,18 @@ Note: It is guaranteed that the output fits in a 32-bit integer.
 def maxProduct(arr):
     n = len(arr)
 
-    result = arr[0]
-    maxEnding = arr[0]
+    curMin = arr[0]
+    curMax = arr[0]
+    maxProd = arr[0]
 
     for i in range(1, n):
-        maxEnding = max(maxEnding * arr[i], arr[i])
+        curMax = max(curMax * arr[i], arr[i], curMin * arr[i])
 
-        result = max(maxEnding, result)
+        curMin = min(curMax * arr[i], arr[i], curMin * arr[i])
 
-    return result
+        maxProd = max(curMax, curMin)
+
+    return maxProd
 
 if __name__ == "__main__":
     arr = [-2, 6, -3, -10, 0, 2]
